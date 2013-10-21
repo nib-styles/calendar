@@ -1,0 +1,141 @@
+.calendar {
+  background: #fff;
+  background: linear-gradient(top,#fff,#eee);
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0,0,.58,1);
+  transition-property: opacity,margin;
+  overflow: hidden;
+  width: 225px;
+  line-height: 32px;
+  text-align: center;
+  padding: 3px;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  position: absolute;
+  border-radius: 3px;
+  z-index: 1000;
+  opacity: 0;
+  margin-left: 25px;
+}
+
+.calendar.is-visible {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.calendar.east,
+.calendar.west {
+  margin-top: -115px;
+}
+
+.calendar__month {
+  user-select: none;
+  cursor: default;
+  background: #259408;
+  background: linear-gradient(top,#259408,#2aa709);
+  cursor: default;
+  position: relative;
+  font-weight: 400;
+  color: #fff;
+  border-bottom: 1px solid rgba(121,190,16,.9);
+  line-height: 33px;
+}
+
+.calendar__back,
+.calendar__forward,
+.calendar__today {
+  position: absolute;
+  top: 9px;
+  cursor: pointer;
+}
+
+.calendar__back {
+  left: 10px;
+}
+
+.calendar__forward {
+  right: 10px;
+}
+
+.calendar__today {
+  left: 30px;
+  top: 5px;
+}
+
+.calendar__week {
+  user-select: none;
+  cursor: default;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2) inset;
+  background: #444;
+  color: #999;
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -1px;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+}
+
+.calendar__days {
+  position: relative;
+  z-index: 1px;
+  overflow: hidden;
+  clear: both;
+  border-top: 1px solid #b9b9b9;
+  border-left: 1px solid #b9b9b9;
+}
+
+.calendar__days span {
+  cursor: pointer;
+  float: left;
+  width: 31px;
+  height: 31px;
+  display: block;
+  border-right: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
+  background: #fff;
+  color: #737373;
+}
+
+.calendar__days span:hover {
+  background: #eee;
+}
+
+.calendar__days span.is-disabled {
+  background: #e9e9e9;
+  color: #bfbfbf;
+}
+
+.calendar__days span.is-selected {
+  background: #259408;
+  color: #fff;
+  border: 1px solid #259408;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.calendar__days span.is-today {
+  position: relative;
+}
+
+.calendar__days span.is-today:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 10px 10px 0 0;
+  border-top-color: #fdd918;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.calendar__week span {
+  display: block;
+  width: 31px;
+  float: left;
+}
