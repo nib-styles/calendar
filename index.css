@@ -103,7 +103,8 @@
   background: #eee;
 }
 
-.calendar__days span.is-disabled {
+.calendar__days span.is-prev-month,
+.calendar__days span.is-next-month {
   background: #e9e9e9;
   color: #bfbfbf;
 }
